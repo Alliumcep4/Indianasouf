@@ -1,0 +1,539 @@
+/* ----------- BASE ----------- */
+
+:root {
+  --font-main: 'Pixelify Sans', sans-serif;
+  --font-alt: 'VT323', monospace;
+  --color-bg: #fefefe;
+  --color-dark: #222;
+  --color-accent: #63bac3;
+  --color-accent-hover: #4aa1a9;
+  --color-highlight: orange;
+  --color-light: #fff;
+  --color-muted: #999;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  text-decoration: none;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--color-bg);
+  padding-top: 10rem;
+}
+
+/* ----------- HEADER ----------- */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--color-light);
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  height: 9.5rem;
+}
+
+.logo-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  letter-spacing: 0.2rem;
+}
+
+.logo-text .souf {
+  color: var(--color-accent);
+  text-shadow: 1px 1px 2px #00000080;
+}
+
+/* --- NAVBAR LINKS --- */
+
+.navbar a {
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  color: var(--color-dark);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+.navbar a:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* --- ICONS (incluye menu hamburguesa y otros iconos) --- */
+
+.icons i {
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 2.2rem;
+  color: var(--color-dark);
+  background: white;
+  padding: 1rem;
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.4s ease;
+}
+
+.icons i:hover {
+  background: var(--color-accent);
+  color: white;
+  transform: rotate(360deg);
+}
+
+/* --- MENÚ HAMBURGUESA --- */
+
+#menu-bars {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--color-dark);
+}
+
+/* ----------- SECTION GENERAL ----------- */
+
+section {
+  padding: 4rem 8%;
+  text-align: center;
+}
+
+section:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+h1 {
+  font-size: 3.8rem;
+  color: var(--color-highlight);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.7rem;
+  color: var(--color-dark);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
+}
+
+/* ----------- HOME, ABOUT & STUDIES CONTENT ----------- */
+
+.home-content,
+.about-content,
+.studies-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-content .image img,
+.about-content .image img,
+.studies-content .img img {
+  max-width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.home-content .content,
+.about-content .content,
+.studies-content .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 600px;
+}
+
+/* ----------- BUTTON ----------- */
+
+.btn,
+.shop-button {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  background: var(--color-accent);
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.shop-button:hover {
+  background: var(--color-accent-hover);
+  transform: scale(1.05);
+}
+
+/* ----------- SOCIAL ICONS ----------- */
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a i {
+  font-size: 3.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+}
+
+.fa-youtube {
+  color: red;
+}
+
+.fa-youtube:hover {
+  color: darkred;
+}
+
+.fa-twitter {
+  color: #1da1f2;
+}
+
+.fa-twitter:hover {
+  color: #0d8ddb;
+}
+
+/* ----------- VIDEO GRID ----------- */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-items: center;
+}
+
+.video-grid iframe {
+  width: 100%;
+  border-radius: 12px;
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.video-grid iframe:hover {
+  transform: scale(1.03);
+  border-color: var(--color-accent-hover);
+}
+
+/* ----------- SHOP SECTION ----------- */
+
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.shop-image {
+  max-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* ----------- CONTACT SECTION ----------- */
+
+.contact {
+  padding: 4rem 8%;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--color-light);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact form input,
+.contact form textarea {
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 0.5rem;
+  resize: none;
+  background-color: #fff;
+  color: var(--color-dark);
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 5px var(--color-accent-hover);
+}
+
+.contact .btn {
+  width: fit-content;
+  align-self: center;
+}
+
+/* ----------- SEARCH FORM ----------- */
+
+#search-form {
+  position: fixed;
+  top: -110%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-form.active {
+  top: 0;
+}
+
+#search-form input {
+  width: 50rem;
+  font-size: 2rem;
+  background: none;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 1rem;
+}
+
+#search-form label {
+  font-size: 3rem;
+  color: white;
+  margin-left: 1rem;
+}
+
+#search-form label:hover {
+  color: var(--color-highlight);
+}
+
+#search-form #close {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ----------- FOOTER ----------- */
+
+.footer {
+  background: #111;
+  color: #eee;
+  padding: 4rem 8%;
+  font-family: var(--font-alt);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  text-align: center;
+}
+
+.footer-logo h2 {
+  font-size: 3rem;
+  color: white;
+}
+
+.footer-logo .souf {
+  color: var(--color-accent);
+  text-shadow: 1px 1px 2px #00000080;
+}
+
+.footer-logo p {
+  font-size: 1.4rem;
+  color: var(--color-muted);
+  margin-top: 1rem;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  font-size: 2rem;
+  color: var(--color-highlight);
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-links ul li a {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.footer-links ul li a:hover {
+  color: var(--color-accent);
+}
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-social i {
+  font-size: 3rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.footer-social i:hover {
+  transform: scale(1.2);
+  color: var(--color-accent-hover);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #444;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  color: #999;
+}
+
+/* ----------- RESPONSIVE ----------- */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  .navbar a {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .home-content,
+  .about-content,
+  .studies-content {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* -------- MENÚ HAMBURGUESA -------- */
+  #menu-bars {
+    display: inline-block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    background: var(--color-light);
+    border: 2px solid var(--color-accent);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar.active {
+    display: flex;
+    max-height: 500px;
+  }
+
+  .navbar a {
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border-radius: 0.5rem;
+    text-align: left;
+    font-size: 1.8rem;
+  }
+
+  .navbar a:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Menú siempre visible en desktop */
+  .navbar {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: auto;
+    box-shadow: none;
+  }
+
+  /* Ocultar icono hamburguesa en desktop */
+  #menu-bars {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
